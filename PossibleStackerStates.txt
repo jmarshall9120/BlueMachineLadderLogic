@@ -1,0 +1,141 @@
+Possible Stacker States
+
+RUN STATE
+State #1 - Run
+	Inputs: 
+		X9 Stacker Reset PB = False
+		X33 Guard Door SW = True
+		X2 Air SW = True
+		X3 Air Pressure Reg = True
+		X17 Machine Run = True
+	Outputs:
+		Y62 Machine Stop Interlock = True
+		Y49 Stacker Jam Light = False
+		Y51 Timing Fault Light = False
+
+State #2 - Off
+	Inputs: 
+		X9 Stacker Reset PB = False
+		X33 Guard Door SW = True
+		X2 Air SW = True
+		X3 Air Pressure Reg = True
+		X17 Machine Run = False
+	Outputs:
+		Y62 Machine Stop Interlock = False
+		Y49 Stacker Jam Light = False
+		Y51 Timing Fault Light = False
+
+State #3 - Error
+	Inputs: 
+		X9 Stacker Reset PB = False
+		(
+			X33 Guard Door SW || 
+			X2 Air SW ||
+			X3 Air Pressure Reg = False
+		)
+		X17 Machine Run = True
+	Outputs:
+		Y62 Machine Stop Interlock = False
+		(
+			Y49 Stacker Jam Light ||
+			Y51 Timing Fault Light = True
+		)
+
+
+State #4 - Reset
+	Inputs: 
+		X9 Stacker Reset PB = True
+		X33 Guard Door SW = True
+		X2 Air SW = True
+		X3 Air Pressure Reg = True
+		X17 Machine Run = ?
+	Outputs:
+		Y62 Machine Stop Interlock = False
+		Y49 Stacker Jam Light = False
+		Y51 Timing Fault Light = False
+
+######################################################################
+
+OPERATIONAL
+State #1 - Rest
+	Inputs:
+		X18 Latch Cam Start = False
+		x19 Eject Arm In Eye = True
+		x20 Eject Arm Out Eye = False
+		x22 Transfer Drive Side Eye = True
+		x21 Transfer Operator Eye = False
+		x26 Operator Side Load In Eye = True
+		x28 Operator Side Load Out Eye = False
+	Outputs:
+		Y59 Vertical Bar Raise Valve = True
+		Y58 Ejection Arm Extend Valve = False
+		Y57 Compression Arm Lower Valve = False
+		Y56 Transfer Arm Extend Valve = False
+		Y54 OS Load Arm Extend Valve = False
+
+State #2 - Ejection
+	Inputs:
+		X18 Latch Cam Start = True
+		x19 Eject Arm In Eye = False
+		x20 Eject Arm Out Eye = True
+		x22 Transfer Drive Side Eye = True
+		x21 Transfer Operator Eye = False
+		x26 Operator Side Load In Eye = True
+		x28 Operator Side Load Out Eye = False
+	Outputs:
+		Y59 Vertical Bar Raise Valve = True
+		Y58 Ejection Arm Extend Valve = True
+		Y57 Compression Arm Lower Valve = False
+		Y56 Transfer Arm Extend Valve = False
+		Y54 OS Load Arm Extend Valve = False
+
+State #3 - Compression
+	Inputs:
+		X18 Latch Cam Start = False
+		x19 Eject Arm In Eye = False
+		x20 Eject Arm Out Eye = True
+		x22 Transfer Drive Side Eye = True
+		x21 Transfer Operator Eye = False
+		x26 Operator Side Load In Eye = True
+		x28 Operator Side Load Out Eye = False
+	Outputs:
+		Y59 Vertical Bar Raise Valve = False
+		Y58 Ejection Arm Extend Valve = True
+		Y57 Compression Arm Lower Valve = True
+		Y56 Transfer Arm Extend Valve = False
+		Y54 OS Load Arm Extend Valve = False
+
+State #4 - Transfer
+	Inputs:
+		X18 Latch Cam Start = False
+		x19 Eject Arm In Eye = False
+		x20 Eject Arm Out Eye = True
+		x22 Transfer Drive Side Eye = False
+		x21 Transfer Operator Eye = True
+		x26 Operator Side Load In Eye = True
+		x28 Operator Side Load Out Eye = False
+	Outputs:
+		Y59 Vertical Bar Raise Valve = False
+		Y58 Ejection Arm Extend Valve = True
+		Y57 Compression Arm Lower Valve = True
+		Y56 Transfer Arm Extend Valve = True
+		Y54 OS Load Arm Extend Valve = False
+
+State #5 - Load
+	Inputs:
+		X18 Latch Cam Start = False
+		x19 Eject Arm In Eye = True
+		x20 Eject Arm Out Eye = False
+		x22 Transfer Drive Side Eye = False
+		x21 Transfer Operator Eye = True
+		x26 Operator Side Load In Eye = False
+		x28 Operator Side Load Out Eye = True
+	Outputs:
+		Y59 Vertical Bar Raise Valve = True
+		Y58 Ejection Arm Extend Valve = False
+		Y57 Compression Arm Lower Valve = False
+		Y56 Transfer Arm Extend Valve = True
+		Y54 OS Load Arm Extend Valve = True
+
+
+
