@@ -8,11 +8,11 @@
 		<Pane-4 Type="0" DockingCX="360" DockingCY="286" Title="XRef View\n\n" ID="6856" DockingHolder="11" FloatingHolder="15" LastHolder="11"/>
 		<Pane-5 Type="2" DockingCX="1920" Horiz="1" Panes="3" Pane-1="6" Pane-2="9" Pane-3="12"/>
 		<Pane-6 Type="2" DockingCX="510" DockingCY="915" Panes="2" Pane-1="7" Pane-2="8"/>
-		<Pane-7 Type="1" DockingCX="255" DockingCY="345" Panes="1" Selected="1" Pane-1="1"/>
-		<Pane-8 Type="1" DockingCX="360" DockingCY="566" Panes="1" Selected="3" Pane-1="3"/>
+		<Pane-7 Type="1" DockingCX="255" DockingCY="360" Panes="1" Selected="1" Pane-1="1"/>
+		<Pane-8 Type="1" DockingCX="360" DockingCY="551" Panes="1" Selected="3" Pane-1="3"/>
 		<Pane-9 Type="2" DockingCX="1052" Panes="2" Pane-1="10" Pane-2="11"/>
-		<Pane-10 Type="4" DockingCY="731"/>
-		<Pane-11 Type="1" DockingCX="360" DockingCY="180" Panes="1" Selected="4" Pane-1="4"/>
+		<Pane-10 Type="4" DockingCY="591"/>
+		<Pane-11 Type="1" DockingCX="360" DockingCY="320" Panes="1" Selected="4" Pane-1="4"/>
 		<Pane-12 Type="1" DockingCX="350" DockingCY="286" Panes="1" Selected="2" Pane-1="2"/>
 		<Pane-13 Type="3" WindowRectTopPos="728" WindowRectBottomPos="1014" WindowRectLeftPos="626" WindowRectRightPos="986" TopContaner="14"/>
 		<Pane-14 Type="2" DockingCX="360" DockingCY="286" Horiz="1" Panes="1" Pane-1="15"/>
